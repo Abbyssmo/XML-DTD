@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medicamentos>
+<medicina>
+    <cantidad> 300 </cantidad>   
+    <peso> gr </peso>
+    <tipo> " pastilla" </tipo>
+     <categoria> "analgesico" </categoria>
+</medicina>
+
+
+</medicamentos>

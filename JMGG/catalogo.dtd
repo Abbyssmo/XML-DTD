@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT catalogo (vendedores,productos,clientes,dire)>
+
+<!ELEMENT vendedores (vendedor+)>
+<!ELEMENT vendedor (nomb_ven,dep )>
+<!ATTLIST vendedor id_ven ID #REQUIRED>
+<!ELEMENT nomb_ven (#PCDATA)>
+<!ELEMENT dep (#PCDATA)>
+<!ATTLIST vendedor fech_alt CDATA #REQUIRED>
+
+<!ELEMENT productos (producto+)>
+<!ELEMENT producto (nomb_prod,coste,precio,marca,desc?,serial?)>
+<!ATTLIST producto id_prod ID #REQUIRED>
+<!ELEMENT nomb_prod (#PCDATA)>
+<!ELEMENT coste (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT marca (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+<!ELEMENT serial (#PCDATA)>
+<!ATTLIST producto cat ( software| hardware|acesorio ) #REQUIRED>
+<!ATTLIST producto fech_crea CDATA #REQUIRED>
+
+
+
+<!ELEMENT clientes (cliente+)>
+<!ELEMENT cliente (nomb_cl,tlf)>
+<!ATTLIST cliente id_cl ID #REQUIRED id_prod IDREF #REQUIRED>
+<!ELEMENT nomb_cl (#PCDATA)>
+<!ELEMENT tlf (#PCDATA)>
+<!ATTLIST cliente fech_alt CDATA #REQUIRED>
+<!ATTLIST tlf  prefijo CDATA #REQUIRED>
+<!ELEMENT dire (dir+)>
+<!ATTLIST dir id_dir ID #REQUIRED id_cl IDREF #REQUIRED>
+<!ELEMENT dir (calle,ciudad,cdp)> 
+<!ELEMENT calle (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT cdp (#PCDATA)>

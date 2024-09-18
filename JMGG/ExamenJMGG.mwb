@@ -1,0 +1,88 @@
+use examen_jmgg;
+insert into departamento values
+( default,'Recursos Humanos'),
+(default,'Finanzas'),
+(default,'Tecnologia');
+insert into empleado values
+(default,'Juan','Perez',101),
+(default,'Maria','Gomez',102),
+(default, 'Luis' ,'Fernandez',103),
+(default,'Ana','Martinez',101),
+(default ,'Carlos','Rodriguez',102),
+(default,'Elena','Sánchez',103);
+insert into salario values 
+(default, 3000,500,'2021-01-15',null , 1);
+insert into salario values 
+(default,3200,600,'2020-06-10', null,2),
+(default ,3500,700,'2019-11-05',null,3),
+(default,3100,500,'2021-03-20', null,4),
+(default,3300,600,'2020-07-15',null,5),
+(default,3600,700,'2019-12-01','2020-12-01',6);
+select empleado.Nomb_emple,empleado.Apellido,departamento.Nomb_Dep
+from departamento 
+join empleado 
+on empleado.Id_Departamento=departamento.idDepartamento;
+
+select empleado.Nomb_emple,empleado.Apellido,salario.Salario_base
+from empleado
+join salario 
+on salario.Id_Empleado=empleado.idEmpleado;
+select empleado.Nomb_emple,empleado.Apellido
+from empleado
+join salario 
+on salario.Id_Empleado=empleado.idEmpleado
+where salario.Fecha_Fin is not null;
+select max(salario.Salario_base)  as salario_Maximo ,departamento.Nomb_Dep as deparatamento
+from empleado
+join salario
+on empleado.idEmpleado=salario.Id_Empleado
+join departamento
+on empleado.Id_Departamento= departamento.idDepartamento
+group by empleado.Id_Departamento;
+
+select avg(salario.Salario_base)  as salario_medio ,departamento.Nomb_Dep as deparatamento
+from empleado
+join salario
+on empleado.idEmpleado=salario.Id_Empleado
+join departamento
+on empleado.Id_Departamento= departamento.idDepartamento
+group by empleado.Id_Departamento;
+select empleado.Apellido,empleado.Nomb_emple,(salario.Salario_base+salario.Bono) as salario_actual
+from empleado 
+join salario 
+on empleado.idEmpleado=salario.Id_Empleado
+order by  salario_actual desc;
+alter table salario
+add Salario_original decimal;
+
+delimiter //
+create trigger  tgr_cambio_de_sueldo  before update 
+on salario
+FOR EACH ROW
+begin 
+	set new.salario_antiguo= old.Salario_base;
+    
+End ;
+
+//
+UPDATE salario
+SET Salario_base=3100
+WHERE idSalario = 1;
+UPDATE salario
+set Salario_base=3400
+where idSalario=5;
+delimiter//
+create  VIEW Empleado_Departamento as 
+select empleado.Nomb_emple as nombre,empleado.Apellido as apellido ,departamento.idDepartamento as departamento 
+from empleado
+join departamento
+on departamento.idDepartamento=empleado.Id_Departamento;
+
+//
+create VIEW Salario_empleado as
+select empleado.Apellido,empleado.Nomb_emple,(salario.Salario_base+salario.Bono) as salario_actual
+from empleado 
+join salario 
+on empleado.idEmpleado=salario.Id_Empleado;
+SELECT * FROM empleado_departamento;
+SELECT * FROM salario_empleado;

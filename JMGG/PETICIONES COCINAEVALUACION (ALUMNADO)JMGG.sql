@@ -1,0 +1,127 @@
+##############################################
+##NOMBRE: Jose Manuel  Gonzalez Gonzalez
+## FECHA: 25-07-2024
+#EVALUACION UF2215. HERRAMIENTAS DE LOS SISTEMAS GESTORES DE BASES DE DATOS, PASARELAS Y MEDIOS DE CONEXIÓN
+# CADA RESPUESTA CORRECTA TIENE UN VALOR DE 0,42 PUNTOS PARA UN TOTAL DE 10
+## BUENA SUERTE !!
+###############################################################################################################
+USE COCINAEVALUACION;
+#REALIZAR LAS SIGUIENTES CONSULTAS UTILIZA JOIN 
+#######################################################################################
+# 1: CONSULTA TODAS LAS COMPRAS CON LA INFORMACION DEL CLIENTE Y EL MODELO DE COCINA COMPRADO:
+select cliente.NOMBRECLIENTE,cliente.NIFCLIENTE,cliente.DIRECCIONCLIENTE,cliente.TELEFONOCLIENTE,
+compras.COCINAS_idCOCINA,compras.CANTIDAD,compras.FECHACOMPRA
+from cliente
+join compras  
+on compras.CLIENTE_idCLIENTE=cliente.idCLIENTE;
+#2: CONSULTA TODAS LAS INSTALACIONES CON SU ESTADO Y LA DIRECCION DEL CLIENTE
+
+select cliente.DIRECCIONCLIENTE, instalacion.ESTADO,instalacion.FECHA,instalacion.HORARIO
+from instalacion
+join cliente
+on `COMPRA(COCINAS_has_CLIENTE)_idCOMPRA`= cliente.idCLIENTE;
+# 3: CONSULTA LAS COMPRAS CON LOS DATOS DEL CLIENTE CON SU FECHA DE COMPRA
+select cliente.NOMBRECLIENTE,cliente.NIFCLIENTE,cliente.DIRECCIONCLIENTE,cliente.TELEFONOCLIENTE,compras.FECHACOMPRA
+from cliente
+join compras
+on compras.CLIENTE_idCLIENTE=cliente.idCLIENTE;
+# 4: CONSULTAR TODAS LAS INSTALACIONES CON EL ESTADO "NO ASIGNADO" Y SUS DATOS DE COMPRA Y CLIENTE
+select instalacion.FECHA,instalacion.DIRECCION,instalacion.HORARIO,cliente.NOMBRECLIENTE,cliente.NIFCLIENTE,cliente.TELEFONOCLIENTE,
+compras.COCINAS_idCOCINA,compras.CANTIDAD,compras.FECHACOMPRA
+from instalacion 
+join cliente
+on `COMPRA(COCINAS_has_CLIENTE)_idCOMPRA`= cliente.idCLIENTE
+join compras 
+on compras.CLIENTE_idCLIENTE=cliente.idCLIENTE;
+# 5: CONSULTAR LOS INSTALADORES CON SUS DATOS MAS RELEVANTES Y CUANTAS INSTALACIONES HAN REALIZADO
+select instaladores.NIF,instaladores.NOMBREINSTALADOR,instaladores.APELLIDOINSTALADOR,instaladores.TELEFONOINSTALADOR,
+sum(instalacion.idINSTALACION) as total_instalacion 
+from instaladores 
+join instalacion
+on instaladores.idINSTALADOR=instalacion.INSTALADORES_idINSTALADOR
+where instaladores.NIF not like 'NO ASIGNADO'
+group by  instaladores.idINSTALADOR;
+# 6: CONSULTA EL NUMERO DE COMPRAS REALIZADAS POR CLIENTE, DATO: MARY CARMEN TIENE 5 
+select cliente.NIFCLIENTE,cliente.NOMBRECLIENTE,
+sum(compras.CANTIDAD) as total_compras 
+from compras
+join cliente 
+on compras.CLIENTE_idCLIENTE=cliente.idCLIENTE
+group by  cliente.idCLIENTE;
+   
+################ REALIZA LAS SIGUIENTE PETICIONES UTILIZA ALTER CON LAS COMBINACIONES MODIFY, CHANGE ETC
+# 7: Renombrar (RENAME) la columna NOMBREINSTALADOR a NOMBRE en la tabla instaladores
+ALTER TABLE instaladores RENAME COLUMN NOMBREINSTALADOR to Nombre;
+
+# 8: AÑADE UN CAMPO NUEVO EN LA TABLA CLIENTE LLAMADO EMAIL DE TIPO VARCHAR (50)
+alter table cliente
+ADD email  varchar(50);
+
+# 9: AÑADE UN CAMPO NUEVO EN LA TABLA INSTALACION LLAMADA PROPINA DE TIPO BOOLEAN 
+alter table instalacion 
+add propina boolean;
+# 10 ELIMINA EL CAMPO PROPINA CREADA EN LA PETICION 9
+alter table instalacion
+drop  propina;
+# 11 ACTUALIZA (UPDATE) EL TELEFONO DEL INSTALADOR CARLOS POR 9999999
+delimiter //
+UPDATE instaladores
+set TELEFONOINSTALADOR=9999999
+Where Nombre = 'CARLOS';
+//
+# 12: ELIMINA LA TABLA auditoria_correcciones
+drop table auditoria_correcciones;
+# 13: BORRAR TODOS LOS TRIGGER DE LA BASE DE DATOS UTILIZA LA SIGUIENTE CONSULTA Y COMPRUEBA
+drop trigger tr_before_insert_observa ;
+drop trigger trg_before_insert_compras_cantidad;
+
+# COMO SE LLAMAN TE HARA FALTA PARA BORRAR
+SELECT TRIGGER_NAME, EVENT_MANIPULATION, EVENT_OBJECT_TABLE, ACTION_STATEMENT, ACTION_TIMING 
+FROM information_schema.TRIGGERS 
+WHERE TRIGGER_SCHEMA = 'cocinaevaluacion';
+# 14: RENOMBRA LA TABLA CLIENTE POR CLIENTES
+
+delimiter//
+rename table cliente to clientes;
+//
+# 15: DEFINE POR DEFECTO EN EL CAMPO ESTADO "PENDIENTE" EN LA TABLA INSTALACION
+alter table  instalacion alter estado
+set default 'Pendiente';
+# 16: MODIFICA UN CAMPO CUALQUIERA CON ALTER TABLE Y CHANGE
+ALTER TABLE instalacion CHANGE `COMPRA(COCINAS_has_CLIENTE)_idCOMPRA` `IDCliente` int;
+# 17: MODIFICA LA LONGITUD DE UN CAMPO TELEFONOCLIENTE DE LA TABLACLIENTE DE VARCHAR(12) A VARCHAR (15)
+delimiter //
+alter table  clientes 
+MODIFY COLUMN TELEFONOCLIENTE varchar(15);
+//
+# 18: MODIFICA DESCUENTO DE LA TABLA COCINAS PARA QUE NO ACEPTE VALORES NULOS (ALTER Y MODIFY)
+alter table  cocinas
+MODIFY COLUMN DESCUENTO int not null;
+# 19: ACTUALIZA LOS VALORES DEL CAMPO ESTADO EN LA TABLA INSTALACION A FINALIZADO CUYA FECHA ANTERIOR "2024-07-10"
+
+delimiter //
+update instalacion 
+set ESTADO = 'finalizado'
+where FECHA < '2024-07-10';
+//
+##### HABLANDO DE PERMISOS VAMOS A TRABAJAR CON LOS USUARIOS Y SUS PERMISOS
+#### PUESE UTILIZAR WORKBENCH O LENGUAJE SQL PARA CREAR EL USUARIO INVITADO
+#########################################################################
+# LENGUAJE DCL : REALIZA LAS SIGUIENTES PETICIONES
+# 20: OTORGA PRIVILEGIOS DE SELECT CON GRANT A UN USUARIO NUEVO LLAMADO INVITADO EL USUARIO DEBE SER LOCALHOST
+delimiter //
+Create user invitado;
+grant select on cocinaevaluacion.*  to invitado;
+//
+#21: REVOCA PERMISOS A INVITADO
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM  invitado ;
+# 22: CREA PERMISOS DE NUEVO PARA EL USUARIO INVITADO PERO DE TIPO INSERT, UPDATE, DELETE SOBRE LA TABLA COMPRAS
+delimiter //
+grant insert,update,delete on cocinaevaluacion. compras to invitado;
+//
+# 23: REVOCA LOS PERMISOS DE USUARIO INVITADO
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM  invitado ;
+# 24: CREA TODOS (*) LOS PERMISOS PARA EL USUARIO INVITADO SOBRE LA TABLA INSTALACION 
+delimiter //
+grant all on cocinaevaluacion. instalacion to invitado;
+//

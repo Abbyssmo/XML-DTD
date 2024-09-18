@@ -1,0 +1,10 @@
+INSERT INTO cliente VALUES(1, 'Aarón', 'Rivero', 'Gómez', 'Almería', 'aaronrivero@gmail.com', 922531020);
+INSERT INTO cliente VALUES(2, 'Adela', 'Salas', 'Díaz', 'Granada', 'adelasalasdiaz@yahoo.com',922584700);
+INSERT INTO cliente VALUES(3, 'Adolfo', 'Rubio', 'Flores', 'Sevilla', 'adolfito@gmail.com, NULL);
+INSERT INTO cliente VALUES(4, 'Adrián', 'Suárez', NULL, 'Jaén', 'adrisuarez@yahoo.es' 928526300);
+INSERT INTO cliente VALUES(5, 'Marcos', 'Loyola', 'Méndez', 'Tenerife', 'marcosloyo@cipcampus.com', 92822200);
+INSERT INTO cliente VALUES(6, 'María', 'Santana', 'Moreno', 'Las palmas', NULL, NULL);
+INSERT INTO cliente VALUES(7, 'Pilar', 'Ruiz', NULL, 'Las palmas', NULL, );
+INSERT INTO cliente VALUES(8, 'Pepe', 'Ruiz', 'Santana', 'Tenerife', 'pepe@hotmail.com, );
+INSERT INTO cliente VALUES(9, 'Guillermo', 'López', 'Gómez', 'Granada', 'guille@hotmail.com' 92222225);
+INSERT INTO cliente VALUES(10, 'Daniel', 'Santana', 'Loyola', 'Sevilla', 'danielsantana@gmail.com',92822125);

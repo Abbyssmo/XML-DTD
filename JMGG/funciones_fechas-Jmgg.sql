@@ -1,0 +1,11 @@
+select now() as 'fecha y hora actual';
+ select CURTIME() as hora_actual;
+ sELECT ADDDATE("2017-06-15", INTERVAL  30 DAY) as fecha_proxima ;
+ SELECT DATE_FORMAT('2024-06-24', "%e/%c/%Y") as formato_fecha;
+ SELECT DATEDIFF("2024-09-12","2024-06-24" ) as dias_hasta_cumple;
+  SELECT DATEDIFF( "2024-12-24", "2024-06-24") as dias_hasta_navidad;
+  SELECT YEAR("1984-09-12")AS AÑO_NACIMIENTO;
+  SELECT  date_format("2024-12-31","%e" ) AS Dia ,MONTH("2024-12-31") AS Mes ;
+  SELECT dayname("2024-09-12") as dia_cumple, MONTHNAME("2024-09-12") as mes_cumple;
+  select day('2024-12-31')as dia, HOUR("2017-06-20 23:59:59")as hora, minute("2017-06-20 12:59:00")as minutos, second("2017-06-20 12:00:59")as segundos;
+  SELECT STR_TO_DATE("August 10 2017", "%M %d %Y");

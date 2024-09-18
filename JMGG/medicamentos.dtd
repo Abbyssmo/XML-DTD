@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT medicamentos (medicinas)>
+
+<!ELEMENT medicinas (medicina+)>
+
+<!ELEMENT medicina (nom_med,cantidad,precio)>
+<!ATTLIST medicina id_med ID #REQUIRED>
+<!ELEMENT nomb_ven (#PCDATA)>
+<!ELEMENT nom_med (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ATTLIST medicina tipo ( jarabe|pastilla|supositorio| inyeciones ) #REQUIRED>
+<!ATTLIST medicina categoria ( analgesico|proviotico|antiviotico| vigoretico|dietetico|eutanasicos ) #REQUIRED>
+<!ELEMENT precio (#PCDATA)>

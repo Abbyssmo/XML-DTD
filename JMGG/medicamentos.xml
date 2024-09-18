@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE medicamentos PUBLIC "public-id" "medicamentos.dtd">
+
+<medicamentos>
+  
+    <medicinas>
+       
+        <medicina tipo ='pastilla' categoria='analgesico' id_med="med01" >
+            <nom_med> Serc </nom_med>
+            <cantidad> 330 mg </cantidad>
+            <precio> 22€ </precio>
+        </medicina>
+
+        <medicina tipo ='jarabe' categoria='antiviotico' id_med='med02' >
+            <nom_med> Dalsy </nom_med>
+            <cantidad> 2L </cantidad>
+            <precio> 12€ </precio>
+        </medicina>
+
+        <medicina tipo ='pastilla' categoria='vigoretico' id_med="med03" >
+            <nom_med> Viagra </nom_med>
+            <cantidad> 330 mg </cantidad>
+            <precio> 33,50€ </precio>
+        </medicina>
+
+        <medicina tipo ='jarabe' categoria='proviotico' id_med="med04" >
+            <nom_med> Almax </nom_med>
+            <cantidad> 1l </cantidad>
+            <precio> 15,00 € </precio>
+        </medicina>
+        
+        <medicina tipo ='pastilla' categoria='analgesico' id_med="med05" >
+            <nom_med> Antangil </nom_med>
+            <cantidad> 500 mg </cantidad>
+            <precio> 20,00 € </precio>
+        </medicina>
+
+
+    </medicinas>
+
+</medicamentos>

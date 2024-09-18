@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo PUBLIC "public-id" "catalogo.dtd">
+
+<catalogo>
+    
+    <vendedores>
+       
+        <vendedor id_ven="ven01" fech_alt="16/09/2024"  >
+          <nomb_ven> Mara Cruz </nomb_ven>
+            <dep> ventas </dep>
+        </vendedor>
+        
+        <vendedor id_ven="ven02" fech_alt= "14/02/2024">
+            <nomb_ven> Pedro Perez </nomb_ven>
+            <dep> administracion </dep>
+        </vendedor>
+
+    </vendedores>
+
+    <productos>
+       
+        <producto id_prod="prod01" cat ="hardware" fech_crea="01/01/2001" >
+            <nomb_prod> <![CDATA[  Disco duro SSD 1TB,alta velocidad]]> </nomb_prod>
+            <coste>50€</coste>
+            <precio>80€</precio>
+            <marca>El moco</marca>
+            <desc> 20% </desc>
+        </producto>
+
+        <producto id_prod="prod02" cat="software" fech_crea="06/06/2006">
+            <nomb_prod> <![CDATA[Licencia Microsoft Office 365 para 1 año ]]>  </nomb_prod>
+            <coste>30€</coste>
+            <precio>60€</precio>
+            <marca> Microsoft Office </marca>
+            <serial>A46798qtr6 </serial>
+        </producto>
+    
+    </productos>
+
+    <clientes>
+
+        <cliente id_cl="cl01" id_prod="prod01" fech_alt="20/12/2022" >
+            <nomb_cl>Juan Baute</nomb_cl>
+            <tlf>612345678</tlf>
+        
+        </cliente>
+
+
+        <cliente id_cl="cl02" id_prod="prod02" fech_alt="15/9/2020" >
+            <nomb_cl>Linda Flores</nomb_cl>
+            <tlf>698765432</tlf>
+        </cliente>
+
+    </clientes>
+ 
+    <dire>
+       
+        <dir id_dir="dir01" id_cl="cl01" >
+            <calle>el pino N80 puerta 22</calle>
+            <ciudad>El Zauce </ciudad>
+            <cdp> 38360 </cdp> 
+        </dir>
+
+        <dir id_dir="dir02" id_cl="cl02" >
+            <calle>La piedra, puerta 33</calle>
+            <ciudad> Rocadura </ciudad>
+            <cdp>06043</cdp>
+        </dir>
+
+    </dire>
+
+
+</catalogo>

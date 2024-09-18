@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT catalogo (vendedor,cliente, producto, direciones)>
+<!ELEMENT vendedor(id_vendedor,nomb_ven,dep )
+<!ELEMENT catalogo (producto +)>

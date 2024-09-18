@@ -1,0 +1,10 @@
+use ventas;
+INSERT INTO comercial VALUES(1, 'Daniel', 'Sáez', 'Vega', 922584769,0.15);
+INSERT INTO comercial VALUES(2, 'Juan', 'Gómez', 'López', 928235689, 0.13);
+INSERT INTO comercial VALUES(3, 'Diego','Flores', 'Salas', 91657489, 0.11);
+INSERT INTO comercial VALUES(4, 'Marta','Herrera', 'Gil', 928718293, 0.14);
+INSERT INTO comercial VALUES(5, 'Antonio','Carretero', 'Ortega', 928639874, 0.12);
+INSERT INTO comercial VALUES(6, 'Manuel','Domínguez', 'Hernández', 600789641, 0.13);
+INSERT INTO comercial VALUES(7, 'Antonio','Vega', 'Hernández', 618739182, 0.11);
+INSERT INTO comercial VALUES(8, 'Alfredo','Ruiz', 'Flores', 633451263, 0.05);
+select * from comercial ;

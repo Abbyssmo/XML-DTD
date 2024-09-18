@@ -1,0 +1,3 @@
+DNI,Nombre,Apellidos,Telefono,fecha_Nacimiento,Seguridad_Social,Puesto_Trabajo_id_Puesto_Trabajo,departamento_id_Departamento
+12345678,paula,"perez,perez",67894567813,1992-10-22,6798471012,NULL,NULL
+978593028,pepe,"lopez,lopez",90867542310,1984-9-25,NULL,NULL,NULL
