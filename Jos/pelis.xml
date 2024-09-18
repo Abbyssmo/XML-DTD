@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cine PUBLIC "public-id" "cine.dtd">
+<cine>
+    <peliculas>
+            <pelicula id_peli='peli01' catl_peli ="accion" >
+                <nomb_peli> Mortal Kombat</nomb_peli>
+                <duracion> 110min</duracion>
+            </pelicula>
+           
+            <pelicula id_peli="peli02" catl_peli="drama">
+                    <nomb_peli>Titanic</nomb_peli>
+                    <duracion> 194 min</duracion>
+            </pelicula>
+           
+            <pelicula id_peli="peli03" catl_peli="musical">
+                <nomb_peli> Les Miserables </nomb_peli>
+                <duracion> 318 min </duracion>
+            </pelicula>
+
+            <pelicula id_peli="peli04" catl_peli="comedia">
+                <nomb_peli> Yo, yo mismo e Irene </nomb_peli>
+                <duracion> 116min </duracion>
+            </pelicula>
+
+            <pelicula id_peli="peli05" catl_peli="horror">
+                <nomb_peli> El cienpies humano </nomb_peli>
+                <duracion> 92 min </duracion>
+            </pelicula>
+
+            <pelicula id_peli="peli06" catl_peli="suspense">
+                <nomb_peli> Cautiva en el infierno </nomb_peli>
+                <duracion> 180 min </duracion>
+            </pelicula>
+
+            <pelicula id_peli="peli07" catl_peli="infantil">
+                <nomb_peli> la historia interminable </nomb_peli>
+                <duracion> 102 min </duracion>
+            </pelicula>
+
+            <pelicula id_peli="peli08" catl_peli="SCFY">
+                <nomb_peli> Star Wars : una nueva esperanza</nomb_peli>
+                <duracion> 181 min </duracion>
+            </pelicula>
+           
+            <pelicula id_peli="peli09" catl_peli="erotico">
+                <nomb_peli> Historia de O </nomb_peli>
+                <duracion> 180 min </duracion>
+            </pelicula>
+            
+
+
+
+
+    </peliculas>
+
+</cine>

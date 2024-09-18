@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT  cine (peliculas)>
+<!ELEMENT peliculas (pelicula+)>
+<!ELEMENT pelicula ( nomb_peli,duracion)>
+<!ATTLIST pelicula id_peli ID #REQUIRED>
+<!ELEMENT nomb_peli (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ATTLIST pelicula catl_peli ( accion| comedia|drama|horror| musical|suspense| infantil |SCFY |erotico ) #REQUIRED>
