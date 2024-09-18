@@ -5,48 +5,72 @@
             <pelicula id_peli='peli01' catl_peli ="accion" >
                 <nomb_peli> Mortal Kombat</nomb_peli>
                 <duracion> 110min</duracion>
+                <fech_emi> 30/09/1995  </fech_emi>
+                <director> Paul W. S. Anderson </director>
             </pelicula>
            
             <pelicula id_peli="peli02" catl_peli="drama">
                     <nomb_peli>Titanic</nomb_peli>
                     <duracion> 194 min</duracion>
+                    <fech_emi> 08/01/1991 </fech_emi>
+                    <director> James Cameron </director>
             </pelicula>
            
             <pelicula id_peli="peli03" catl_peli="musical">
                 <nomb_peli> Les Miserables </nomb_peli>
-                <duracion> 318 min </duracion>
+                <duracion> 138 min </duracion>
+                <fech_emi>5/12/2012  </fech_emi>
+                <director>Tom Hooper  </director>
             </pelicula>
 
             <pelicula id_peli="peli04" catl_peli="comedia">
                 <nomb_peli> Yo, yo mismo e Irene </nomb_peli>
                 <duracion> 116min </duracion>
+                <fech_emi> 23/06/2000 </fech_emi>
+                <director>  Bobby Farrelly, Peter Farrelly </director>
             </pelicula>
 
             <pelicula id_peli="peli05" catl_peli="horror">
                 <nomb_peli> El cienpies humano </nomb_peli>
                 <duracion> 92 min </duracion>
+                <fech_emi>30/04/2010 </fech_emi>
+                <director>Tom Six  </director>
             </pelicula>
 
             <pelicula id_peli="peli06" catl_peli="suspense">
                 <nomb_peli> Cautiva en el infierno </nomb_peli>
                 <duracion> 180 min </duracion>
+                <fech_emi> 10/09/2016</fech_emi>
+                <director> Stephen Kemp </director>
             </pelicula>
 
             <pelicula id_peli="peli07" catl_peli="infantil">
                 <nomb_peli> la historia interminable </nomb_peli>
                 <duracion> 102 min </duracion>
+                <fech_emi> 06/04/1984</fech_emi>
+                <director>Wolfgang Petersen  </director>
             </pelicula>
 
             <pelicula id_peli="peli08" catl_peli="SCFY">
                 <nomb_peli> Star Wars : una nueva esperanza</nomb_peli>
                 <duracion> 181 min </duracion>
+                <fech_emi> 07/11/1977</fech_emi>
+                <director>  George Lucas </director>
             </pelicula>
            
             <pelicula id_peli="peli09" catl_peli="erotico">
                 <nomb_peli> Historia de O </nomb_peli>
-                <duracion> 180 min </duracion>
+                <duracion> 97 min </duracion>
+                <fech_emi> 28/06/1975</fech_emi>
+                <director> Just Jaeckin </director>
             </pelicula>
             
+            <pelicula id_peli="peli10" catl_peli="fantasia">
+                <nomb_peli> El señor de los anillos : La comunidad del anillo </nomb_peli>
+                <duracion> 178 min </duracion>
+                <fech_emi> 19/12/2001 </fech_emi>
+                <director> Peter Jason </director>
+            </pelicula>
 
 
 
